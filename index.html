@@ -1,1 +1,32 @@
+/* index.html */
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <title>カウントアップタイマー</title>
+</head>
+<body>
+  <main>
+    <h1>カウントアップタイマー</h1>
+    <div id="timer">00:00:00</div>
+    <div class="controls">
+      <button id="startBtn">スタート</button>
+      <button id="pauseBtn">一時停止</button>
+      <button id="resetBtn">リセット</button>
+    </div>
+  </main>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(() => {
+        console.log('Service Worker Registered');
+      });
+    }
+  </script>
+</body>
+</html>
 
